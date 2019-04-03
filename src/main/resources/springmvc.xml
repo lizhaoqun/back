@@ -41,7 +41,7 @@
                 <value>WriteNullStringAsEmpty</value>
                 <value>WriteNullListAsEmpty</value>
                 <value>DisableCircularReferenceDetect</value>
-                <value>PrettyFormat</value>
+            <value>PrettyFormat</value>
             </list>
         </property>
     </bean>

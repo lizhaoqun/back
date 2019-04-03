@@ -1,14 +1,7 @@
 package com.neuedu.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.alibaba.fastjson.support.config.FastJsonConfig;
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.neuedu.pojo.Message;
-import com.neuedu.pojo.User;
-import com.neuedu.service.UserService;
+import com.neuedu.util.Message;
 import com.neuedu.util.MyUtil;
-import org.apache.ibatis.reflection.SystemMetaObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by 86178 on 2019/3/23.
@@ -32,7 +23,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class Mycontroller {
-    @Resource
+    /*@Resource
     UserService userService;
    @GetMapping("/goLogin")
     public String goLogin(){
@@ -90,8 +81,8 @@ public class Mycontroller {
     }
     @GetMapping("/getList")
     @ResponseBody
-    public List<User> getList(User user){
-        return userService.list(user);
+    public Message getList(User user){
+        return new Message(1,userService.list(user));
     }
     @GetMapping("/goAdd")
     public String goAdd(){
@@ -120,5 +111,5 @@ public class Mycontroller {
         else
             userService.reback(id);
         return "redirect:list";
-    }
+    }*/
 }

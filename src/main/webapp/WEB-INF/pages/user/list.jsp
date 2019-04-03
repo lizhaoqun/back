@@ -98,6 +98,14 @@
                 </tr>
             </tbody>
         </table>
+        <div class="pagelist">
+            <a href="javascript:void(0)">上一页</a>
+            <span class="current">1</span>
+            <a href="javascript:void(0)">2</a>
+            <a href="javascript:void(0)">3</a>
+            <a href="javascript:void(0)">下一页</a>
+            <a href="javascript:void(0)">尾页</a>
+        </div>
     </div>
 </form>
     <script>
@@ -105,7 +113,8 @@
             el:"#app",
             data(){
                 return{
-                    list:[]
+                    list:[],
+                    pageNo:1
                 }
             },
             created(){
@@ -113,6 +122,7 @@
                 $.ajax({
                    url:"${basePath}/user/getList",
                    dataType:"json",
+                   data:{pageNo:vue.pageNo},
                    success:function (result) {
                        vue.list=result;
                    }
